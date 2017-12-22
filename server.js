@@ -1,6 +1,6 @@
 var express = require("express");
-var methodoverride = require("method-override");
-var bodyparser = require("body-parser");
+var methodOverride = require("method-override");
+var bodyParser = require("body-parser");
 
 // create our server
 var app = express();
