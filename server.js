@@ -3,6 +3,7 @@ var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 
 // create our server
+var port = 8080;
 var app = express();
 app.use(express.static("public"));
 
@@ -22,7 +23,7 @@ app.engine('handlebars',exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
-var routes = require(./controllers/burgersController.js)
+var routes = require("./controllers/burgersController.js")
 
 app.use("/", routes);
 app.listen(port);
