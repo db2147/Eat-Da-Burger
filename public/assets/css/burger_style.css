@@ -1,0 +1,19 @@
+html {
+    background-color: #FFC04C;
+}
+
+body {
+    widows: 75%;
+    margin: 0 auto;
+
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: white;
+}
+
+#yummy_burger{
+    display: block;
+    margin: auto;
+
+}
