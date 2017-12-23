@@ -5,11 +5,11 @@ var bodyParser = require("body-parser");
 // create our server
 var port = 8080;
 var app = express();
-app.use(express.static("public"));
+app.use(express.static(process.cwd() + "public"));
 
 app.use(bodyParser.urlencoded({
-    extended: false
-}));
+    extended: true
+}))
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -18,7 +18,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Set Method Override
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method'))
 app.engine('handlebars',exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
 
@@ -26,6 +26,8 @@ app.set('view engine', 'handlebars');
 var routes = require("./controllers/burgersController.js")
 
 app.use("/", routes);
+app.use('/update', routes);
+app.use('/create', routes);
 app.listen(port);
 
  
