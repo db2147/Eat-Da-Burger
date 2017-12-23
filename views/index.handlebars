@@ -1,19 +1,20 @@
 <h1>Eat-Da-Burger!</h1>
 
-<!-- need to add the devour button -->
-<!-- sample code of the delete button -->
-{{!-- <ul>
-{{#each movies}}
+<!-- added the devour button -->
+<ul>
+  {{#each burgers}}
+    {{#unless this.sleepy}}
     <li>
-        <p>{{this.id}}. {{this.movie}}
+        {{this.name}}  }
 
-        <form action="/delete_method=DELETE" method="POST">
-        <input type="hidden" name="id" value="{{this.id}}">
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="id" value="true">
+          <button type="submit">DEVOUR IT!</button>
         </form>
-        </p>
     </li>
-{{/each}}
-</ul> --}}
+    {{/unless}}
+  {{/each}}
+</ul>
 
 
 <form method="POST" action="/api/burgers">
