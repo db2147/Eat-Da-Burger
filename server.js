@@ -1,12 +1,13 @@
 var express = require("express");
 var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 // create our server
 var port = 8080;
 var app = express();
-app.use(express.static(process.cwd() + "public"));
-
+//app.use(express.static(process.cwd() + "public"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
     extended: true
 }))
@@ -28,7 +29,9 @@ var routes = require("./controllers/burgersController.js")
 app.use("/", routes);
 app.use('/update', routes);
 app.use('/create', routes);
-app.listen(port);
+app.listen(port, function () {
+    console.log("...server listening at port", port)
+});
 
  
 
