@@ -3,16 +3,37 @@ html {
 }
 
 body {
-    widows: 75%;
+    background-color: #FFC04C;
     margin: 0 auto;
-
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
-    background-color: #FFC04C;;
+    flex-direction: column;    
 }
 
 #yummy_burger{
     display: block;
     margin: auto;
+}
+
+img{
+    margin-left: 475px;
+}
+
+.button{
+    border-bottom: 44px;
+}
+
+.col-md-5 devouredDiv{
+    padding-left: 200px;
+
+}
+/* .btn-btn-default-devourButton */
+
+.eaten{
+    margin-left: 200px;
+}
+
+h1{
+    font-family: Taco Modern;
+    font-size: 55px;
 }

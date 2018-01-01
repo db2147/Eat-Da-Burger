@@ -7,43 +7,57 @@ var burger = require("../models/burger.js");
 var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-    burger.all(function(data) {
-      var hbsObject = {
-        burgers: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
-    });
+router.get("/", function (req, res) {
+  burger.all(function (data) {
+    var hbsObject = {
+      burgers: data
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
   });
-  
-  router.post("/api/burgers", function(req, res) {
-    burger.create([
-      "name", "sleepy"
-    ], [
-      req.body.name, req.body.sleepy
-    ], function(result) {
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
-    });
+});
+
+router.post("/burgers/insertOne", function (req, res) {
+  console.log(req.body.burger)
+  burger.create([
+    "burger_name", "devoured"
+  ], [
+    req.body.burger, 0
+  ], function (result) {
+    // Send back the ID of the new quote
+    res.redirect("/");
   });
-  
-  router.put("/api/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
-  
-    console.log("condition", condition);
-  
-    burger.update({
-      sleepy: req.body.sleepy
-    }, condition, function(result) {
-      if (result.changedRows == 0) {
-        // If no rows were changed, then the ID must not exist, so 404
-        return res.status(404).end();
-      } else {
-        res.status(200).end();
-      }
-    });
+});
+
+router.put("/burgers/:id", function (req, res) {
+  var condition = "id=" + req.params.id;
+  console.log(condition);
+  var eaten = req.body.state;
+  console.log(eaten);
+
+  // when looking at the mySQL database, we can see that the 0 shows uneaten, and the 1 shows devoured
+  var eatenNum;
+  if (eaten === "yes") {
+    eatenNum = 0;
+  } else {
+    eatenNum = 1;
+  }
+
+
+  console.log("condition", condition);
+
+  burger.update({
+    "devoured": eatenNum
+  }, condition, function (result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
   });
+
+});
 
 //export router
 module.exports = router;

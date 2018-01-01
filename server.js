@@ -6,7 +6,7 @@ var path = require("path");
 // create our server
 var port = 8080;
 var app = express();
-//app.use(express.static(process.cwd() + "public"));
+// app.use(express.static(process.cwd() + "public"));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
     extended: true
@@ -19,9 +19,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Set Method Override
-app.use(methodOverride('_method'))
-app.engine('handlebars',exphbs({defaultLayout:'main'}));
-app.set('view engine', 'handlebars');
+// app.use(methodOverride('_method'));
+
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/burgersController.js")
