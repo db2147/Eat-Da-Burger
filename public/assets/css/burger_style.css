@@ -17,6 +17,7 @@ body {
 
 img{
     margin-left: 475px;
+    margin-top: 45px;
 }
 
 .button{
@@ -30,10 +31,15 @@ img{
 /* .btn-btn-default-devourButton */
 
 .eaten{
-    margin-left: 200px;
+    /* margin-left: 200px; */
 }
 
 h1{
     font-family: Taco Modern;
     font-size: 55px;
+     
+}
+.cook{
+    border-left: 55px;
+    /* margin-left: 100px; */
 }
