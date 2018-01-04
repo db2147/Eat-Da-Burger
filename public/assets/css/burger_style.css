@@ -10,6 +10,11 @@ body {
     flex-direction: column;    
 }
 
+@font-face {
+    font-family: 'TacoModern';
+    src: local('tacofont'), url('../fonts/tacofont.eot'), url('../fonts/tacofont.TTF') format('truetype'), url('../fonts/tacofont.svg') format('svg');
+}
+
 #yummy_burger{
     display: block;
     margin: auto;
@@ -42,4 +47,20 @@ h1{
 .cook{
     border-left: 55px;
     /* margin-left: 100px; */
+}
+
+.addBurger {
+    line-height: 3.1;
+}
+
+#burgerInput {
+    border-radius: 5px;
+}
+
+#subButton {
+    background-color: #a94442;
+    padding: 10px 20px;
+    color: white;
+    font-size: 22px;
+    margin-left: 5px;
 }
