@@ -1,4 +1,4 @@
-import { createConnection } from "../../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/mysql";
+// import { createConnection } from "../../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/mysql";
 
 /* 
 Here is where you make the connection to the database and export and used by the O.R.M.
