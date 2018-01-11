@@ -12,7 +12,7 @@ body {
 
 @font-face {
     font-family: 'TacoModern';
-    src: local('tacofont'), url('../fonts/tacofont.eot'), url('../fonts/tacofont.TTF') format('truetype'), url('../fonts/tacofont.svg') format('svg');
+    src: local('tacofont'), url('..public/assets/fonts/TACOM__.TTF'), url('../fonts/TACOM__.TTF') format('truetype'), url('../fonts/tacofont.svg') format('svg');
 }
 
 #yummy_burger{
