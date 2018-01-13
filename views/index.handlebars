@@ -21,7 +21,7 @@
         <ul>
             {{#each burgers}} {{#unless this.devoured}}
             <li>
-                {{this.burger_name}}
+                <p>{{this.burger_name}}</p>
 
                 <input type="hidden" name="burger_id" value="true">
                 <button data-eaten="no" data-value="{{this.id}}" class="btn btn-default devourButton">DEVOUR IT!</button>
