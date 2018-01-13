@@ -3,8 +3,8 @@ var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 var path = require("path");
 
-// create our server
-var port = 8080;
+// create our server 
+var port = process.env.PORT || 5000;
 var app = express();
 // app.use(express.static(process.cwd() + "public"));
 app.use(express.static("public"));
